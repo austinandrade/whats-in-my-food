@@ -8,7 +8,8 @@ describe 'FoodsFacade' do
 
   it 'returns 10 dishes including the ingredient sweet potato ' do
    foods_facade = FoodsFacade.relevant_dishes('sweet potato')
-   expect(foods_facade.count).to eq(10)
-   expect(foods_facade.first).to be_an_instance_of(Food)
+   expect(foods_facade.first).to be_an(Integer)
+   expect(foods_facade[1].count).to eq(10)
+   expect(foods_facade[1].first).to be_an_instance_of(Food)
   end
 end

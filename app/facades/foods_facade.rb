@@ -8,9 +8,10 @@ class FoodsFacade
 
     def create_dishes(dish_data)
       total_found = dish_data[:totalHits]
-      dish_data[:foods].map do |dishy_data|
-        Food.new(dishy_data, total_found)
+      foods_collection = dish_data[:foods].map do |dishy_data|
+        Food.new(dishy_data)
       end
+      [total_found, foods_collection]
     end
   end
 end
